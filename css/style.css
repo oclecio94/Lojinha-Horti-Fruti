@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  background-image: url(../img/frutas-e-verduras.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+  text-align: center;
+  font-size: 3rem;
+  color: greenyellow;
+}
+
+main {
+  padding: 30px 50px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+.lineinput {
+  display: grid;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  outline: none;
+}
+
+button {
+  border: none;
+  padding: 10px;
+  outline: none;
+  background-color: blueviolet;
+  color: #fff;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: rgb(102, 31, 168);
+  transition: all ease 0.3ms;
+}
+
+.content {
+  margin-top: 15px;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+table th {
+  background-color: rgb(214, 214, 214);
+}
+
+table th td {
+  text-align: left;
+  padding: 1px 5px;
+}
+
+table td img {
+  width: 22px;
+}
+
+.center {
+  text-align: center;
+}
