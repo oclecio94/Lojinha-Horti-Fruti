@@ -5,15 +5,20 @@ class Produto {
     this.editID = null;
   }
 
+  cliquePreco(evento){
+    if(evento.key == "Enter"){
+      this.salvar();
+    }
+  }
+
   salvar() {
     let produto = this.lerDados();
+    if (!this.camposValidados(produto)) return;
 
-    if (this.validaCampos(produto)) {
-      if (this.editID == null) {
-        this.adicionar(produto);
-      } else {
-        this.atualizar(this.editID, produto);
-      }
+    if (this.editID == null) {
+      this.adicionar(produto);
+    } else {
+      this.atualizar(this.editID, produto);
     }
 
     this.listaTabela();
@@ -38,6 +43,8 @@ class Produto {
       td_preco.innerText = this.arrayProdutos[i].preco;
 
       td_id.classList.add("center");
+      td_produto	.classList.add("center");
+      td_preco.classList.add("center");
 
       let imgEdit = document.createElement("img");
       imgEdit.src = "img/botao-editar.png";
@@ -55,6 +62,7 @@ class Produto {
         "produto.deletar(" + this.arrayProdutos[i].id + ")"
       );
 
+      td_acoes.classList = "td_acoes";
       td_acoes.appendChild(imgEdit);
 
       td_acoes.appendChild(imgExcluir);
@@ -85,21 +93,24 @@ class Produto {
 
     return produto;
   }
-  validaCampos(produto) {
+
+  camposValidados(produto) {
     let msg = "";
+    let erro = false;
 
     if (produto.nomeProduto == "") {
-      msg += "-Informe o nome do Produto \n";
+      msg += "Informe o nome do Produto \n";
+      erro = true;
     }
+    
+    if (produto.preco == "" || produto.precos == 0) {
+      msg += "Informe o preço do Produto \n";
+      erro = true;
+    }
+    
+    erro ? alert(msg) : "";
 
-    if (produto.preco == "") {
-      msg += "-Informe o preço do Produto \n";
-    }
-    if (msg != "") {
-      alert(msg);
-      return false;
-    }
-    return true;
+    return !erro;
   }
 
   cancelar() {
