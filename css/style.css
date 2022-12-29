@@ -5,9 +5,15 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  --cor-verde: greenyellow;
+  --cor-vermelha: red;
+  --cor-rouxa: blueviolet;
+  --cor-rouxa2: rgb(102, 31, 168);
+  --cor-cinza-escuro: rgb(214, 214, 214);
+  --cor-cinza: #ccc;
 }
 
-header {
+#header {
   background-image: url(../img/frutas-e-verduras.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -23,11 +29,12 @@ main {
 
 .card {
   background-color: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid var(--cor-cinza);
   padding: 20px;
   margin-top: 15px;
   border-radius: 5px;
 }
+
 .lineinput {
   display: grid;
   margin-bottom: 10px;
@@ -35,24 +42,34 @@ main {
 
 input {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--cor-cinza);
   border-radius: 3px;
   outline: none;
 }
+.row-buttons {
+  display: flex;
+  justify-content: space-between;
+}
 
-button {
+.button {
   border: none;
   padding: 10px;
   outline: none;
-  background-color: blueviolet;
   color: #fff;
   border-radius: 3px;
   font-weight: bold;
 }
 
-button:hover {
-  background-color: rgb(102, 31, 168);
+.button:hover {
   transition: all ease 0.3ms;
+}
+
+.green-button {
+  background-color: var(--cor-verde);
+}
+
+.red-button {
+  background-color: var(--cor-vermelha);
 }
 
 .content {
@@ -61,12 +78,12 @@ button:hover {
 
 table {
   border-collapse: collapse;
-  border: 1px solid #ccc;
+  border: 1px solid var(--cor-cinza);
   width: 100%;
 }
 
 table th {
-  background-color: rgb(214, 214, 214);
+  background-color: var(--cor-cinza-escuro);
 }
 
 table th td {
@@ -78,6 +95,21 @@ table td img {
   width: 22px;
 }
 
+.td_acoes {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .center {
   text-align: center;
+}
+
+@media (max-width: 480px) {
+  #header {
+   
+    height: 250px;
+    text-align: center;
+    font-size: 2.5rem;
+    color: greenyellow;
+  }
 }
